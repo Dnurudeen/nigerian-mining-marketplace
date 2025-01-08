@@ -1,0 +1,10 @@
+@font-face { @include fontface(Inter, Inter-Light, 300, normal);}
+@font-face { @include fontface(Inter, Inter-Regular, 400, normal);}
+@font-face { @include fontface(Inter, Inter-Medium, 500, normal);}
+// @font-face { @include fontface(Inter, TTCommons-Medium, 500, normal);}
+// @font-face { @include fontface(Inter, TTCommons-MediumItalic, 500, italic);}
+@font-face { @include fontface(Inter, Inter-SemiBold, 600, normal);}
+// @font-face { @include fontface(Inter, Lato-BoldItalic, 700, italic);}
+@font-face { @include fontface(Inter, Inter-Bold, 700, normal);}
+// @font-face { @include fontface(Inter, Lato-BlackItalic, 900, italic);}
+@font-face { @include fontface(Inter, Inter-Black, 900, normal);}

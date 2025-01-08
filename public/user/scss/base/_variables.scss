@@ -1,0 +1,76 @@
+$sm: 576px;
+$sm-m: 575px;
+$md: 768px;
+$md-m: 767px;
+$lg: 992px;
+$lg-m: 991px;
+$xl: 1200px;
+$xl-m: 1199px;
+$xxl: 1450px;
+$xxl-m: 1449px;
+// Colors
+// Color names - http://name-of-color.com/
+// $clr-dark-blue:#172541;
+// $clr-dark-blue2:#273758;
+// $clr-light-blue:#E4F0F6;
+// $clr-sky-blue:#00D1F3;
+// $clr-lightest-gray:#F4F4F4;
+// $clr-light-gray:#C0C6C7;
+// $clr-light-gray2:#D5E3EA;
+// $clr-gray2:#BDBDBD;
+// new-color
+$clr-black: #000;
+$clr-dark:#0A150A;
+$clr-white:#fff;
+$clr-blue:#245EAA;
+$clr-cyan:#16F1FD;
+$clr-orange:#CC4C26;
+$clr-red: #C20202;
+$clr-green:#02C215;
+$clr-light-gray:#eee;
+$clr-light-gray2:#f4f4f4;
+$clr-lightest-gray:#D9D9D9;
+$clr-gray:#808080;
+$clr-yellow:#F8E30F;
+$bg-yellow:rgba(251, 179, 16, 0.3);
+$base-link-color:#051934;
+$bg-color:rgba(244, 244, 244, 0.9);
+$txt-clr:#051934;
+$clr-base-color:$clr-black;
+$base-font-sans-serif:'Inter';
+// 'Arial',
+// 'Helvetica Neue',
+// 'Helvetica',
+// sans-serif;
+// $base-font-serif:'Times New Roman',
+// 'Times',
+// 'Baskerville',
+// 'Georgia',
+// serif;
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+// Body
+$base-text-color: $clr-base-color;
+$base-background-color: $clr-black;
+$font-size-base: 1rem;
+$line-height-base: 1.375;
+$base-font-family: $base-font-sans-serif !default;
+//$vertical-rhythm: ($line-height-base * 1em);
+$base-min-width: 320px;
+// Liks
+// $base-link-color:$clr-blue;
+// Forms
+// $form-element-padding: $btn-padding !default;
+// $form-element-border-color: $gray !default;
+// $form-element-focus-border-color: $black !default;
+$placeholder-color: $clr-gray;
+// Headers
+// $h1-font-size: 30px !default;
+// $h2-font-size: 27px !default;
+// $h3-font-size: 24px !default;
+// $h4-font-size: 21px !default;
+// $h5-font-size: 17px !default;
+// $h6-font-size: 15px !default;
+$headings-font-family: inherit !default;
+$headings-color: inherit;
+$animation-speed: 0.3s;

@@ -1,0 +1,77 @@
+body{
+
+}
+
+/* LOGIN PAGE */
+/* #login{
+    display: none;
+} */
+@media only screen and (min-width: 992px){
+    #login{
+        padding: 20px 10rem 20px 10rem;
+    }
+    #register{
+        padding: 20px 10rem 20px 10rem;
+        position:absolute;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+    }
+    .desktop{
+        display: inline;
+    }
+    #register #img{
+        display: inline;
+    }
+    #login #img{
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .desktop{
+        display: block;
+    }
+    #register #img{
+        display: none;
+    }
+    #login #img{
+        display: none;
+    }
+}
+
+#login img{
+    width: auto;
+    height: inherit;
+}
+#login .card{
+    padding: 20px;
+    border: none;
+}
+#login a{
+    text-decoration: none;
+}
+#login #img{
+    background: linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.789)), url(../images/login-background.png);
+    background-size: cover;
+}
+
+
+
+#register img{
+    width: auto;
+    height: inherit;
+}
+#register .card{
+    padding: 20px;
+    border: none;
+}
+#register a{
+    text-decoration: none;
+}
+#register #img{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../images/texture-background.png);
+    height: 65rem;
+    background-size: cover;
+}

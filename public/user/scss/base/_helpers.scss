@@ -1,0 +1,70 @@
+// list reset
+%listreset {
+	margin: 0;
+	padding: 0;
+	li{
+		list-style: none;
+	}
+}
+
+// clearfix
+%clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+
+// transition
+%transition {
+	transition: all 0.3s ease-in-out;
+}
+
+// justify nav
+%justify {
+	text-align: justify;
+	font-size: 1px;
+	line-height: 0px;
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+	}
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+
+
+
+// text-hide
+%hide-text{
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// reset for box
+%boxreset {
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+// background reset
+%backgroundreset {
+  -webkit-background-size:cover;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+}

@@ -1,0 +1,107 @@
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+// alignment
+@mixin align($align: top) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
+/// font-smothing
+/// @include font-smoothing(on);
+/// @include font-smoothing(off);
+@mixin font-smoothing($value:on){
+	@if $value == on{
+		-webkit-font-smoothing:antialiased;
+		-moz-osx-font-smoothing:grayscale;
+	}
+	@else{
+		-webkit-font-smoothing:subpixel-antialiased;
+		-moz-osx-font-smoothing:auto;
+	}
+}
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   @include placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     @include placeholder {
+///      color: red;
+///     }
+///   }
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder {opacity: 1; @content}
+	&:-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+	&.placeholder {@content}
+}
+
+
+// icon
+@mixin icon($content) {
+  font-family: "icomoon";
+  content: $content;
+  font-weight: 400 !important;
+}
+
+//@font-face { @include fontface(cartograph, cartographmonocf-bold, 700, normal);}
+
+// custom font mixin
+@mixin fontface ($fontfamily, $filename, $weight: normal, $style: normal) {
+  font-family: $fontfamily;
+  src: url('../fonts/#{$filename}.eot');
+  src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/#{$filename}.woff') format('woff'),
+     url('../fonts/#{$filename}.ttf') format('truetype'),
+     url('../fonts/#{$filename}.svg#{$filename}') format('svg');
+  font-weight: $weight;
+  font-style: $style;
+  font-display:"swap";
+}
+
+
+//Font with px and line height  px
+/* @mixin font($size: 16, $lineheight: 16, $weight: null) {
+  @if ($weight == null) {
+    font-size: $size + px;
+    line-height: $lineheight + px;
+  }@else {
+    font-weight: $weight;
+    font-size: $size + px;
+    line-height: $lineheight + px;
+  }
+} */
+
+// font with px and line height em
+// @mixin font($size: 16, $lineheight: 25, $weight: null) {
+//   @if ($weight == null) {
+//     font-size: $size + px;
+//     line-height: $lineheight / $size;
+//   }@else {
+//     font-weight: $weight;
+//     font-size: $size + px;
+//     line-height: $lineheight / $size;
+//   }
+// }
+
+//Font
+@mixin font($size: 16, $lineheight: 16, $weight: null) {
+  @if ($weight == null) {
+    font-size: rem-calc($size);
+    line-height: rem-calc($lineheight);
+  }@else {
+    font-weight: $weight;
+    font-size: rem-calc($size);
+    line-height: rem-calc($lineheight);
+  }
+}
+
