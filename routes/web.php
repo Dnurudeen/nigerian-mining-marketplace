@@ -13,6 +13,7 @@ use App\Http\Controllers\OTPController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\SubscriptionController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
 
     Route::get('/', [MarketplaceController::class, 'index'])->name('marketplace');
@@ -92,8 +93,15 @@ use Illuminate\Support\Facades\Auth;
 
 
 Auth::routes();
+// Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+// Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+// Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Auth::routes(['verify' => true]);
+// Route::get('email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+//     return redirect('/seller.items');
+// })->middleware(['auth', 'signed'])->name('verification.verify');
 
 // Route::post('/send-otp', [OTPController::class, 'sendOTP']);
 // Route::post('/verify-otp', [OTPController::class, 'verifyOTP']);
