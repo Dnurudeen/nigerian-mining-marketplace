@@ -401,7 +401,7 @@
                                 <div class="card-description" id="product-content">
                                     <div>
                                         <strong class="crd-title">{{ $item->name }}</strong>
-                                        <p class="card-text">{{ Str::limit($item->description, 100) }}</p>
+                                        <p class="card-text">{{ Str::limit($item->description, 30) }}</p>
                                         {{-- <span class="crd-title" style="font-size: 14px; font-weight: 500;">{{ $ad->slug }}</span> --}}
                                     </div>
                                     <div class="card-footer">

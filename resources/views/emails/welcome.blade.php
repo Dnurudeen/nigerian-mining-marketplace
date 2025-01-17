@@ -96,7 +96,7 @@
                 <img src="https://marketplace.nigerianmining.com/user/images/logo.png" alt="Email header"><br>
                 <b>MARKETPLACE</b>
             </div>
-            <p>Hello {{ Auth::user()->name }},</p>
+            <p>Hello {{ $user->name ?? NULL }},</p>
             <p>Welcome to Nigerian Mining Marketplace, where buyers and sellers of several items connect seamlessly. Your account has been successfully created.</p>
             <h4>Next Steps:</h4>
             <ol>
