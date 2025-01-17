@@ -11,6 +11,7 @@ use Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
@@ -90,9 +91,10 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
     protected function create(array $data)
     {
-        $user = User::make([
+        $user = User::create([
             'name' => $data['first_name'] . ' ' . $data['last_name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
@@ -105,32 +107,14 @@ class RegisterController extends Controller
             $user->assignRole('seller'); // Ensure 'seller' role exists
         }
 
-        try{
-            Mail::to($user->email)->send(new WelcomeMail($user));
-
-            // Check if there were any failures
-            if (count(Mail::failures()) > 0) {
-                throw new Exception("Email sending failed.");
-                return null;
-            }
-
-            // Save the user only if email is successfully sent
-            $user->save();
-            $user->sendEmailVerificationNotification();
-
-            return $user;
-        }catch (Exception $e) {
-            // Handle the error, log, or return a response
-            \Log::error('User registration failed due to email error: ' . $e->getMessage());
-            return null; // Or handle the failure response accordingly
+        if($user == true){
+            // $user->sendEmailVerificationNotification();
+            Mail::to($user->email)->queue(new WelcomeMail($user));
         }
 
-        if ($user) {
-            Auth::login($user);
-        } else {
-            return redirect()->back()->withErrors(['error' => 'User registration failed.']);
-        }
 
-        \Log::info('User object:', ['user' => $user]);
+        return $user;
     }
+
+
 }

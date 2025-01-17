@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
 
 class WelcomeMail extends Mailable
 {
@@ -30,7 +31,9 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
+        $user = Auth::user();
+
         return $this->subject('Welcome to Our Platform')
-                    ->view('emails.welcome'); // Create this view
+                    ->view('emails.welcome', compact('user')); // Create this view
     }
 }
