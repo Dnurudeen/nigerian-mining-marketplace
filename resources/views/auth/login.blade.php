@@ -1,7 +1,7 @@
-@section('meta')
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name='copyright' content='Copyright © 2024 Nigerian Mining. All rights reserved.'>
 <meta name="keywords" content="Nigeria mining, mining industry, mining news, mining equipment, classified ads, mining services, minerals, resources, mining opportunities, exploration, mining community, geological insights, mineral extraction, Nigerian mines, drilling equipment, excavation tools, mining machinery">
 
@@ -20,7 +20,6 @@
 <meta name="twitter:title" content="Nigeria Mining About Us">
 <meta name="twitter:description" content="Explore the rich landscape of Nigeria's mining industry and connect with experts. Post and discover ads for mining equipment, services, and opportunities. Your comprehensive platform for everything related to mining in Nigeria.">
 <meta name="twitter:image" content="{{ asset('user/images/logo.png') }}">
-@endsection
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
@@ -91,8 +90,8 @@
                 <div>
                     <a href="{{ url('/') }}"><img src="assets/images/logo.png" style="width: 7rem; margin-bottom: 4rem;" alt=""></a>
                 </div>
-                <div style="padding: 40px;">
-                    <div class="card w-75 me-auto ms-auto mt-auto">
+                <div style="padding: 20px;">
+                    <div class="card w-100 me-auto ms-auto mt-auto">
                         <h3 class="mb-4 mt-3">Log In</h3>
                         {{-- @if (session('error'))
                         <div class="alert alert-danger">

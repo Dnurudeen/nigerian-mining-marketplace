@@ -91,6 +91,11 @@ use Illuminate\Support\Facades\Auth;
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
 
+    // Signed
+    Route::get('terms-and-conditions', [RegisterController::class, 'termsCondition'])->name('terms-and-conditions');
+    Route::get('privacy-policy', [RegisterController::class, 'privacyPolicy'])->name('privacy-policy');
+
+
 
 Auth::routes();
 // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');

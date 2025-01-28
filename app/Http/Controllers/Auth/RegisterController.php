@@ -116,5 +116,10 @@ class RegisterController extends Controller
         return $user;
     }
 
-
+    public function termsCondition(){
+        return view('sign.terms-and-condition');
+    }
+    public function privacyPolicy(){
+        return view('sign.privacy-policy');
+    }
 }

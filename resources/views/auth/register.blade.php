@@ -1,7 +1,7 @@
-@section('meta')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name='copyright' content='Copyright © 2024 Nigerian Mining. All rights reserved.'>
     <meta name="keywords" content="Nigeria mining, mining industry, mining news, mining equipment, classified ads, mining services, minerals, resources, mining opportunities, exploration, mining community, geological insights, mineral extraction, Nigerian mines, drilling equipment, excavation tools, mining machinery">
 
@@ -18,12 +18,13 @@
     <meta name="twitter:title" content="Nigeria Mining About Us">
     <meta name="twitter:description" content="Explore the rich landscape of Nigeria's mining industry and connect with experts. Post and discover ads for mining equipment, services, and opportunities. Your comprehensive platform for everything related to mining in Nigeria.">
     <meta name="twitter:image" content="{{ asset('user/images/logo.png') }}">
-    @endsection
 
     <link rel="icon" type="image/png" href="{{asset('user/images/nm-favicon.png')}}" sizes="32x32" width="64" height="64">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{asset('user/css/main.css')}}">
+
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}"> --}}
 
     <script src="https://kit.fontawesome.com/3df60fe6e2.js" crossorigin="anonymous"></script>
@@ -35,13 +36,16 @@
     <title>REGISTER</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .show-password {
         transition: opacity .25s;
         position: absolute;
         background-color: transparent;
         right: 60;
         margin: auto;
-        top: 0;
+        top: 160;
         bottom: 0;
         height: fit-content;
         border: none;
@@ -51,11 +55,11 @@
         outline: none;
         text-transform: uppercase;
         }
-        @media (max-width:768px){
+        @media only screen and (min-width: 1000px){
             .show-password {
-                right: 20;
-                top: 0;
-                bottom: -60;
+                right: 40;
+                top: 40;
+                bottom: 20;
             }
         }
         .show-password:hover,
@@ -99,10 +103,21 @@
         .hidden {
         display: none;
         }
+
+
+
+
+        input[type=text], input[type=tel], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
     </style>
 
 
-    <div class="content">
+    <div class="">
     <div id="register" class="desktop">
         <div class="">
             <div class="row">
@@ -113,7 +128,7 @@
                     </div>
                     <!-- <img src="assets/images/login-background.png" alt="login-background"> -->
                 </div>
-                <div class="col-lg-6 bg-light p-3" style="min-height: 5rem; padding: ;">
+                <div class="col-lg-6 bg-light p-3" style="min-height: 5rem;">
                     <div>
                         <a href="{{ url('/') }}"><img src="assets/images/logo.png" style="width: 13rem; margin-bottom: -3rem; margin-left: 2rem;" alt=""></a>
                     </div>
@@ -129,7 +144,7 @@
                             <form action="{{ route('register') }}" id="registrationForm" id="individual" method="post">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6 form-group mb-3">
+                                    <div class="col-lg-6 form-group mb-3">
                                         <small for="Email">First Name <span class="text-danger">*</span></small>
                                         <input id="first_name" type="text" class="form-control" name="first_name" value=" "  placeholder="First Name">
 
@@ -139,7 +154,7 @@
                                         </span>
                                         @enderror -->
                                     </div>
-                                    <div class="col-md-6 form-group mb-3">
+                                    <div class="col-lg-6 form-group mb-3">
                                         <small for="Email">Last Name <span class="text-danger">*</span></small>
                                         <input id="last_name" type="text" class="form-control" name="last_name" value=" "  placeholder="Last Name">
 
@@ -159,7 +174,7 @@
                                                     <span class="iconify" data-icon="flag:gb-4x3"></span><i class="" style=""></i>
                                                     <strong></strong>
                                                 </div>
-                                                <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required placeholder="Phone Number">
+                                                <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required placeholder="+">
 
                                                 {{-- <input type="tel" name="tel" placeholder="Phone Number"> --}}
                                             </div>
@@ -214,7 +229,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <small for="Password">Confirm Password <span class="text-danger">*</span></small>
-                                    <input id="password-confirm confirm-password" type="password" class="form-control pass" name="password_confirmation" autocomplete="new-password" placeholder="Password">
+                                    <input id="password-confirm" type="password" class="form-control pass" name="password_confirmation" autocomplete="new-password" placeholder="Password">
                                 </div>
 
                                 <div id="requirements" class="password-requirements">
@@ -243,11 +258,11 @@
 
                                 <div class="row">
                                     <small class="col-12 text-left mb-4 mt-2">
-                                        <input type="checkbox" name="" id="" required style="transform: scale(1.2);"> By creating an account you agree to Pit To Port Media’s <a href="#" class="text-danger">Terms and Conditions</a>
+                                        <input type="checkbox" name="" id="" required style="transform: scale(1.2);"> By creating an account you agree to Pit To Port Media’s <a href="{{ route('terms-and-conditions') }}" target="_blank" class="text-danger">Terms and Conditions</a>
                                     </small>
 
                                     <small class="col-12 text-right">
-                                        Please see our <a href="#" class="text-danger">Privacy Policy</a>  to see how we process your data.
+                                        Please see our <a href="{{ route('privacy-policy') }}" target="_blank" class="text-danger">Privacy Policy</a>  to see how we process your data.
                                     </small>
                                 </div>
                                 <input type="hidden" name="role" value="seller" />
@@ -409,7 +424,7 @@
     const inputs = document.querySelectorAll("input");
     const form = document.getElementById("form");
     const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirm-password");
+    const confirmPassword = document.getElementById("password-confirm");
     const showPassword = document.getElementById("show-password");
     const matchPassword = document.getElementById("match");
     const submit = document.getElementById("submit");
