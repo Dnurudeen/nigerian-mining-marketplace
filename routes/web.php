@@ -4,7 +4,8 @@ use App\Http\Controllers\AdController;
 use App\Http\Controllers\MarketplaceController;
     use App\Http\Controllers\SellerController;
     use App\Http\Controllers\AdminController;
-    use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\CategoryController;
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\Auth\LoginController;
     use App\Http\Controllers\Auth\RegisterController;
@@ -15,6 +16,8 @@ use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\GoogleController;
+
 
     Route::get('/', [MarketplaceController::class, 'index'])->name('marketplace');
     Route::get('/item/{id}', [MarketplaceController::class, 'viewItem'])->name('item.view');
@@ -90,6 +93,29 @@ use Illuminate\Support\Facades\Auth;
     // Registration Routes
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
+
+    // Google Routes
+    // Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+    // Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+    // Google URL
+    // Route::prefix('google')->name('google.')->group( function(){
+    //     Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+    //     Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
+    // });
+
+    Route::get('auth/google', [RegisterController::class, 'redirectToProvider']);
+    Route::get('auth/google/callback', [RegisterController::class, 'handleProviderCallback']);
+
+    // Facebook Login URL
+    // Route::prefix('facebook')->name('facebook.')->group( function(){
+    //     Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    //     Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+    // });
+
+    Route::get('/auth/facebook', [FacebookController::class, 'redirectToFacebook']);
+    Route::get('/auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
 
     // Signed
     Route::get('terms-and-conditions', [RegisterController::class, 'termsCondition'])->name('terms-and-conditions');
