@@ -174,9 +174,9 @@
                         <a class="dropdown-item preview-item" href="{{ route('payments') }}">
                             <i class="icon-head"></i> Payment History
                         </a>
-                        <a class="dropdown-item preview-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item preview-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-now').submit();">
                             <i class="icon-inbox"></i> Logout
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-now" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </a>

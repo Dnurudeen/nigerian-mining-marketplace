@@ -23,6 +23,8 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+<script src="https://kit.fontawesome.com/3df60fe6e2.js" crossorigin="anonymous"></script>
+
 
 <title>LOGIN</title>
 
@@ -87,17 +89,18 @@
                 <!-- <img src="assets/images/login-background.png" alt="login-background"> -->
             </div>
             <div class="col-lg-6 bg-light" style="min-height: 45rem;">
-                <div>
-                    <a href="{{ url('/') }}"><img src="assets/images/logo.png" style="width: 7rem; margin-bottom: 4rem;" alt=""></a>
+                <div class="p-3">
+                    <a href="{{ url('/') }}"><img src="assets/images/logo-sm.png" style="width: 9rem; margin-bottom: 0rem;" alt=""></a>
                 </div>
                 <div style="padding: 20px;">
                     <div class="card w-100 me-auto ms-auto mt-auto">
                         <h3 class="mb-4 mt-3">Log In</h3>
-                        {{-- @if (session('error'))
+                        @if (session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
                         </div>
-                    @endif --}}
+                    @endif
+
                     @if(session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -147,6 +150,17 @@
                                 <p>Don’t have an account? <a href="{{ route('register') }}" class="text-danger">Register here</a></p>
                             </div>
                         </form>
+                        <div class="card">
+                            <a href="{{ url('auth/google')}}" class="btn btn-danger btn-user btn-block py-2 text-light">
+                                <i class="fab fa-google fa-fw"></i>
+                                Login with Google
+                            </a>
+
+                            <a href="{{ url('auth/facebook') }}" class="btn btn-primary btn-user btn-block my-3 py-2 text-light">
+                                <i class="fab fa-facebook-f fa-fw"></i>
+                                Login with Facebook
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

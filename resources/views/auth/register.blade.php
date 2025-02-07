@@ -136,6 +136,11 @@
                         <div class="card w-100 me-auto ms-auto mt-auto container" style="">
                             <h3 class="mb-4">Register</h3>
                             <p>Register via email and phone <br> <span class="text-danger">*</span>  indicates require fields</p>
+                            <div class="card">
+                                <a href="{{ url('auth/google') }}" class="btn btn-danger">
+                                    Sign in with Google
+                                </a>
+                            </div>
 
                             <div class="me-0 ms-0 mt-0">
                                 <input type="radio" value="ind" onchange="showDiv()" id="test2" name="reg" checked> Individual
